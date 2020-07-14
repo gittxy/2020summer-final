@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script  type="text/javascript" defer=true language=Javascript src="../js/MyVip.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>  
+    <title>会员中心</title>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #EEEEEE; 
+        }
+        header{
+            width: 1000px;
+            height: 3em;
+            background-color: #00A2CA;
+            margin: 10px auto;
+        }
+        header p{
+            text-align: center;
+            line-height:3em;
+            font-size: larger;
+            color: #EEEEEE;
+        }
+        .top{
+            width: 1000px;
+            height: 200px;
+            margin: 10px auto;
+            
+        }
+        .btn1{
+            width: 150px;
+            height: 60px;
+            border: 2px solid #46B3E6;
+            background-color: white;
+            color: #46B3E6;
+            border-radius: 4px;
+            font-weight: 600;
+            float: right;
+            margin-top: 50px;
+            margin-right: 20px;
+            
+        }
+        .btn1:hover{
+            background-color: #46B3E6;
+            color: white;
+        }
+        .logo{
+            float: left;
+        }
+        .xinxi{
+            float: left;
+            margin-left: 30px;
+            margin-top: 20px;
+            width: 400px;
+        }
+        
+        .top1{
+            float: left;
+            clear: both;
+        }
+        .guding{
+            float: left;
+        }
+        .bianhua{
+            margin-top: 15px;
+            margin-left: 10px;
+            float: left;
+            
+        }
+        .bianhua a{
+            /*去下划线*/
+            text-decoration: none;
+            color:blue;
+        }
+        /*设置超链接移入效果*/
+        .bianhua a:hover{
+            color:darkgray;
+            text-decoration: underline;
+        }
+        .quanyi{
+            width: 1000px;
+            height: 469px;
+            margin: 10px auto;
+            
+        }
+        .youhuiquan{
+            /*转换为块*/
+	        display: block;
+            width: 330px;
+            height: 469px;
+            float: left;
+            
+            background-image: url(../img/c1.png);
+        }
+        .dazhe{
+            /*转换为块*/
+	        display: block;
+            width: 330px;
+            float: left;
+            height: 469px;
+            margin-left: 5px;
+            
+            background-image: url(../img/c2.png);
+        }
+        .jifen{
+            /*转换为块*/
+	        display: block;
+            width: 330px;
+            height: 469px;
+            float: left;
+            margin-left: 5px;
+            
+            background-image: url(../img/c3.png);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>我的会员</p> 
+    </header>
+
+    <!--上半部分-->
+    <div class="top">
+        <button class="btn1" id="open">开通会员</button>
+
+        <!--头像-->
+        <div class="logo">
+            <img class="touxiang" src="../img/timg.jpg" alt="网站logo">
+        </div>
+        <!--中间相关用户信息-->
+        <div class="xinxi">
+            <!--第一行-->
+            <div class="top1">
+                <div class="guding">
+                    <p>亲爱的用户:</p>
+                </div>
+                <div class="bianhua">
+                    <lh>
+                        <a href="UserCenter.html" id ="username" contenteditable="true"></a>
+                        
+                    </lh>
+                </div> 
+            </div>    
+            <!--第二行-->
+            <div class="top1">
+                <div class="guding">
+                    <p>会员有效期至:</p>
+                </div>
+                <div class="bianhua">
+                    <lh>
+                        <a href="UserCenter.html" id ="endtime" contenteditable="true"></a>                       
+                    </lh>
+                </div> 
+            </div>
+            <!--第三行-->
+            <div class="top1">
+                <div class="guding">
+                    <p>会员积分:</p>
+                </div>
+                <div class="bianhua">
+                    <lh>
+                        <a href="UserCenter.html" id ="credit" contenteditable="true"></a>                       
+                    </lh>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <!--中间-->
+    <div class="quanyi">
+        
+        <div class="youhuiquan"></div>
+        <div class="dazhe"></div>
+        <div class="jifen"></div>
+
+    </div>
+
+    
+</body>
+</html>

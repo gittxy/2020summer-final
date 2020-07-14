@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.bx_web.mapper.UserMapper">
+    <resultMap id="user" type="com.example.bx_web.pojo.User">
+        <id column="user_id" property="user_id" />
+        <result column="username" property="username"/>
+        <result column="nickname" property="nickname"/>
+        <result column="password" property="password"/>
+        <result column="gender" property="gender"/>
+        <result column="email" property="email"/>
+        <result column="phone" property="phone"/>
+        <result column="zip_code" property="zip_code"/>
+        <result column="location" property="location"/>
+        <result column="age" property="age"/>
+        <result column="country" property="country"/>
+        <result column="detail_address" property="detail_address"/>
+        <result column="identity" property="identity"/>
+        <result column="phone" property="phone"/>
+        <result column="code" property="code"/>
+        <result column="end" property="end"/>
+        <result column="created" property="created"/>
+        <result column="points" property="points"/>
+        <result column="role_id" property="role_id"/>
+    </resultMap>
+
+    <!--普通用户登录-->
+    <select id="userLogin" resultType="com.example.bx_web.pojo.User">
+        SELECT *
+        FROM user
+        where username = #{username}
+          and password = #{password}
+          and role_id= #{role_id}
+--         limit 0,1
+    </select>
+
+    <insert id="userRegister">
+        INSERT INTO user(username,password,role_id) values(#{username},#{password},#{role_id})
+    </insert>
+
+    <select id="userinfo" resultType="com.example.bx_web.pojo.User">
+        SELECT *
+        FROM user
+        where user_id = #{user_id}
+    </select>
+
+    <update id="modifyinfo">
+        update  user
+        <trim prefix="set" suffixOverrides=",">
+            <if test="username">username=#{username},</if>
+            <if test="password">password=#{password},</if>
+            <if test="location">location=#{location},</if>
+        </trim>
+        WHERE user_id=#{user_id}
+    </update>
+
+    <update id="rechargeMember" parameterType="int">
+        update  user
+        <trim prefix="set" suffixOverrides=",">
+            <if test="active">active=1,</if>
+            <if test="end">end=DATE_SUB(now(), INTERVAL -30 DAY),</if>
+            <if test="created">created=now(),</if>
+        </trim>
+        WHERE user_id=#{user_id}
+    </update>
+
+    <update id="points">
+        update  user
+        <trim prefix="set" suffixOverrides=",">
+            <if test="points">points=#{points},</if>
+        </trim>
+        WHERE user_id=#{user_id}
+    </update>
+
+    <!-- 添加用户操作 -->
+    <insert id="add" parameterType="com.example.bx_web.pojo.User">
+        insert into user(user_id,username,nickname,password,gender,email,phone,zip_code,location,age,country,detail_address,identity,
+                         active,code,role_id) values(#{user_id},#{username},#{nickname},#{password},#{gender},#{email},#{phone},#{zip_code}
+                                                    ,#{location},#{age},#{country},#{detail_address},#{identity},#{active},#{code},#{role_id})
+    </insert>
+
+    <!-- 删除用户 -->
+    <delete id="delete" parameterType="int">
+        delete from user where user_id = #{user_id}
+    </delete>
+
+    <!--列出所有用户-->
+    <select id="getAllUser" resultMap="user">
+        SELECT *
+        FROM user limit 50
+    </select>
+
+</mapper>

@@ -1,0 +1,47 @@
+.book_show{
+    top: 150px;
+    margin: 0 auto;
+    position:fixed;
+}
+.book_font{
+    margin: 0 auto;
+    position:fixed;
+    left: 20%;
+    top: 120px;
+    font-size:xx-large;
+    font-family: 华文行楷;
+}
+.book_left{
+    width: 30%;
+    height: 400px;
+    left: 20%;
+    margin: 0 auto;
+    position:fixed;
+
+}
+.book_right{
+    border: 2px solid #46B3E6;
+    width: 30%;
+    height: 400px;
+    margin: 0 auto;
+    position:fixed;
+    left: 50%;
+
+}
+
+.btn{
+    width: 100px;
+    height:28px;
+    border: 2px solid #46B3E6;
+    background-color: white;
+    color: #46B3E6;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.content{
+    height: 50px;
+}
+.content_1{
+    height: 100px;
+}

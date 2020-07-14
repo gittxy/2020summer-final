@@ -1,0 +1,8 @@
+1	Philosophy Religion	2017-07-11
+2	Sciences	2017-07-11
+3	Political Science Law	2017-07-11
+4	Military Science	2017-07-11
+5	Economy	2017-07-11
+6	Culture Education and Sports	2017-07-11
+7	History	2017-07-11
+8	Medicine Health Care	2017-07-11

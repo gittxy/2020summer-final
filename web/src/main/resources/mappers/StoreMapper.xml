@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.bx_web.mapper.StoreMapper">
+    <resultMap id="store" type="com.example.bx_web.pojo.Store">
+        <id column="store_id" property="store_id" />
+        <result column="store_manager_id" property="store_manager_id"/>
+        <result column="store_phone_num" property="store_phone_num"/>
+        <result column="store_telephone" property="store_telephone"/>
+        <result column="store_name" property="store_name"/>
+        <result column="store_position" property="store_position"/>
+        <result column="created" property="created"/>
+        <result column="updated" property="updated"/>
+    </resultMap>
+
+    <!-- 获取店铺信息 -->
+    <select id="getStore" parameterType="int" resultType="com.example.bx_web.pojo.Store">
+        select * from store where store_manager_id = #{store_manager_id}
+    </select>
+
+
+    <!-- 修改商店信息 -->
+    <update id="edit" parameterType="com.example.bx_web.pojo.Store">
+        update  store
+        <trim prefix="set" suffixOverrides=",">
+            <if test="store_manager_id">store_manager_id=#{store_manager_id},</if>
+            <if test="store_phone_num">store_phone_num=#{store_phone_num},</if>
+            <if test="store_telephone">store_telephone=#{store_telephone},</if>
+            <if test="store_name">store_name=#{store_name},</if>
+            <if test="store_position">store_position=#{store_position},</if>
+            <if test="created">created=#{created},</if>
+            <if test="updated">phone=#{updated},</if>
+        </trim>
+        WHERE store_manager_id=#{store_manager_id}
+    </update>
+
+</mapper>

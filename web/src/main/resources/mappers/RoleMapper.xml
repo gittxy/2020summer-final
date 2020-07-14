@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.bx_web.mapper.RoleMapper">
+	<resultMap id="roler" type="com.example.bx_web.pojo.Role">
+		<id column="role_id" property="role_id" />
+		<result column="name" property="name"/>
+		<result column="code" property="code"/>
+		<result column="description" property="description"/>
+		<result column="created" property="created"/>
+		<result column="updated" property="updated"/>
+	</resultMap>
+
+	<!-- 角色插入操作 -->
+	<insert id="add" parameterType="com.example.bx_web.pojo.Role">
+		insert into role(role_id,name,code,description,created,updated) values(#{role_id},#{name},#{code},#{description},#{created},#{updated})
+	</insert>
+
+
+	<!-- 删除角色信息 -->
+	<delete id="delete" parameterType="Long">
+		delete from role where role_id = #{role_id}
+	</delete>
+
+	<!-- 修改角色信息 -->
+	<update id="edit" parameterType="com.example.bx_web.pojo.Role">
+		update  role
+		<trim prefix="set" suffixOverrides=",">
+			<if test="name">name=#{name},</if>
+			<if test="code">code=#{code},</if>
+			<if test="description">description=#{description},</if>
+			<if test="created">created=#{created},</if>
+			<if test="updated">updated=#{updated},</if>
+		</trim>
+		WHERE role_id=#{role_id}
+	</update>
+
+	<!--列出所有角色信息-->
+	<select id="getAllRole" resultMap="roler">
+		SELECT *
+		FROM role
+	</select>
+</mapper>

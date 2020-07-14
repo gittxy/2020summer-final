@@ -1,0 +1,31 @@
+
+.container {
+    width: 980px;
+    height: 600px;
+    margin: 0 auto;
+    position:fixed;
+    left: 40%;
+    right: 0;
+  }
+  .log-possion{
+    width: 980px;
+    position: fixed;
+    top: 250px;
+  }
+  .log-font{
+    font-family: 华文行楷;
+  }
+  .con-input {
+    height: 40px;
+    width: 20%;
+    margin-bottom: 5px;
+    padding-left: 10%;
+    border: 0;
+    border-bottom: solid 1px lavender;
+  }
+  .login_btn {
+    width: 10%;
+    top:200px;
+    font-size: 16px;
+    filter: brightness(1.4);
+  }

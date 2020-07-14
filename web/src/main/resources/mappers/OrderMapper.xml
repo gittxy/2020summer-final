@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.bx_web.mapper.OrderMapper">
+
+    <select id="OrderR" parameterType="int" resultType="com.example.bx_web.pojo.Order">
+        select * from orders where user_id=#{user_id}
+    </select>
+
+    <insert id="addorder">
+        INSERT INTO orders(user_id,payment,status,payment_type,create_time,update_time) values(#{user_id},#{payment},
+        #{status},#{payment_type},now(),now())
+    </insert>
+
+    <update id="editorder">
+        update  orders
+        <trim prefix="set" suffixOverrides=",">
+            <if test="status">status=#{status},</if>
+            <if test="update_time">update_time=now(),</if>
+        </trim>
+        WHERE order_id=#{order_id}
+    </update>
+
+    <delete id="deleteorder" parameterType="BigInteger">
+        delete from orders where order_id=#{order_id}
+    </delete>
+
+</mapper>

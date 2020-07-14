@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script type="text/javascript" defer=true language=Javascript src="../js/UserIndex.js"></script>
+        <style type="text/css">
+        /*清除默认样式*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*设置头部div*/
+        .header{
+            /*设置宽度*/
+            width: 1000px;
+           
+           
+            /*居中*/
+            margin: 10px auto;
+            padding-top: 20px;
+
+        }
+        /*logo位置*/
+        .logo{
+            margin-left: 15px;
+        }
+        /*设置导航条*/
+        .nav{
+            float:right;
+        }
+        .nav li{
+            float: left;
+            /*设置内边距*/
+            padding: 0 10px;
+            margin-top: 10px;
+        }
+        /*导航条*/
+        .nav a{
+            color:black;
+            /*去下划线*/
+            text-decoration: none;
+            
+        }
+        /*设置超链接移入效果*/
+        .nav a:hover{
+            color:darkgray;
+            text-decoration: underline;
+        }
+        /*设置搜索框*/
+        .container {
+                width: 350px;
+                height: 50px;
+                margin-top: 10px;
+                margin-right: 25px;
+                float:right
+            }
+            
+            .parent {
+                width: 100%;
+                height: 42px;
+                top: 4px;
+                position: relative;
+            }
+            
+            .parent>input:first-of-type {
+                /*输入框高度设置为40px, border占据2px，总高度为42px*/
+                width: 250px;
+                height: 42px; 
+                border: 1px solid #ccc;
+                font-size: 14px;
+                outline: none;
+                color: #bfbfbf;
+                padding-left: 15px;
+            }
+            
+            .parent>input:first-of-type:focus {
+                border: 1px solid #317ef3;
+                padding-left: 10px;
+            }
+            
+            .parent>input:last-of-type {
+                /*button按钮border并不占据外围大小，设置高度42px*/
+                width: 80px;
+                height: 44px; 
+                position: absolute;
+                background: #317ef3;
+                border: 1px solid #317ef3;
+                color: #fff;
+                font-size: 16px;
+                outline: none;
+            }
+
+       
+        .banner{
+            width: 1000px;
+            height: 250px;
+            /*居中*/
+            margin: 10px auto;
+            /*开启相对定位*/
+            position: relative;
+            
+        }
+        /*设置导航按钮*/
+        .pointer{
+            position: absolute;
+            top: 230px;
+            left: 20px;
+
+
+        }
+        .pointer a{
+            float: left;
+            /*设置宽度和高度*/
+            width: 20px;
+            height: 20px;
+            background: url(../img/circle.jpg) no-repeat;
+
+            /*设置一个左外边距*/
+            margin-left: 4px;
+
+            
+        }
+        .pointer .active,
+        .pointer a:hover{
+            background: url(../img/circle2.jpg) no-repeat;
+        }
+        
+        /*设置超链接hover*/
+        
+
+
+
+        /*设置一个content*/
+        .content{
+            /*设置宽度*/
+            width: 1000px;
+            height: 400px;
+            /*设置颜色*/
+            background-color:azure;
+            /*居中*/
+            margin: 10px auto;
+        }
+        /*解决高度塌陷*/
+        .clearfix:before,
+        .clearfix:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /*设置小div*/
+        .top20{
+            width: 243px;
+            height: 100%;
+            background-color: coral;
+            /*向左浮动*/
+            float: left;
+            background-color: aliceblue;
+            border-width: 3px;
+            border-color: cadetblue;
+            border-style: solid;
+
+        }
+        .t{
+            margin-top: 15px;
+            margin-left: 30px;
+        }
+        .content h1{
+            font: 20px Georgia;
+            margin-left: 28px;
+            margin-top: 18px;
+        }
+        .tuijian{
+            width: 735px;
+            height: 100%;
+            background-color:aquamarine;
+            float: left;
+            /*设置边距*/
+            margin-left: 8px;
+            background-color:aliceblue;
+            border-width: 3px;
+            border-color: cadetblue;
+            border-style: solid;
+
+        }
+        .n1,.n2,.n3,.n4{
+            float: left;
+            margin-left: 15px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        
+
+        /*设置一个footer*/
+        .footer{
+            /*设置宽度*/
+            width: 1000px;
+            height: 150px;
+            /*设置颜色*/
+            background-color: silver;
+            /*居中*/
+            margin: 0 auto;
+        }
+
+        
+
+
+        </style>
+    </head> 
+    <body>
+        
+        <!--头部div-->
+        <div class="header">
+            
+
+            <!--导航条-->
+            <ul class="nav">
+                <li>
+                    <a href="UserCenter.html">个人中心</a>
+                    <p>Usercenter</p>
+                </li>
+                <li>
+                    <a href="UserCart.html">购物车</a>
+                    <p>UserCart</p>
+                </li>
+                <li>
+                    <a href="UserLogin.html">登录/注册</a>
+                    <p>Login/Reg</p>
+                </li>
+                
+            </ul>
+
+            <!--搜索框-->
+            <div class="container">
+                <form action="" class="parent">
+                    <input type="text" value="输入关键词">
+                    <input type="button" value="搜索">
+                </form>
+            </div>
+
+            <!--头部logo-->
+            <div class="logo">
+                <img src="../img/logo.png" alt="网站logo">
+            </div>
+
+        </div>
+
+
+        <!--广告栏-->
+        <div class="banner">
+            <img src="../img/banner1.png" alt="">
+            <!--创建div放导航按钮-->
+            <div class="pointer">
+                <a class="active" href=""></a>
+                <a href=""></a>
+                <a href=""></a>
+                <a href=""></a>
+            </div>
+
+        </div>
+
+        <!--主体内容-->
+        <div class="content clearfix">
+            <!--左侧-->
+            <div class="top20">
+                <h1>热销Top20</h1>
+
+                <!--top20推荐-->
+                <div class="t">
+                    <li>
+                        <a href="./UserBook.html">汤姆历险记</a>
+                    </li>
+                    <li>
+                        <a href="#">汤姆历险记</a>
+                    </li>
+                    <li>
+                        <a href="#">汤姆历险记</a>
+                    </li>
+                    <li>
+                        <a href="#">汤姆历险记</a>
+                    </li>
+                    <li>
+                        <a href="#">汤姆历险记</a>
+                    </li>
+                    <li>
+                        <a href="#">汤姆历险记</a>
+                    </li>
+                    <li>
+                        <a href="#">汤姆历险记</a>
+                    </li>
+                    <li>
+                        <a href="#">汤姆历险记</a>
+                    </li>
+                    <li>
+                        <a href="#">汤姆历险记</a>
+                    </li>
+                    <li>
+                        <a href="#">汤姆历险记</a>
+                    </li>
+                </div>
+            </div>
+            <!--中间-->
+            <div class="tuijian">
+                <h1>为你推荐</h1>
+                <div class="n1">
+                    <img src="../img/logo.png" alt="第一本书">
+                </div>
+                <div class="n2">
+                    <img src="../img/logo.png" alt="第二本书">
+                </div>
+                <div class="n3">
+                    <img src="../img/logo.png" alt="第三本书">
+                </div>
+                <div class="n4">
+                    <img src="../img/logo.png" alt="第四本书">
+                </div>
+            </div>
+        </div>
+        <!--底部信息-->
+        <div class="footer"></div>
+    </body>   
+</html>

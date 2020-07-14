@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.bx_web.mapper.FavoriteMapper">
+
+
+    <insert id="add">
+        INSERT INTO favorites(user_id,book_id,store_id,name,image_url,price) values(#{user_id},
+        #{book_id},
+        #{store_id},
+        #{name},
+        null,
+        #{price})
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete from favorites where favorite_id=#{favorite_id}
+    </delete>
+
+    <select id="findList" parameterType="int" resultType="com.example.bx_web.pojo.Favorite">
+        select * from favorites where user_id=#{user_id}
+    </select>
+</mapper>

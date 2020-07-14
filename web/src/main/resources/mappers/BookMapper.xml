@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.bx_web.mapper.BookMapper">
+    <resultMap id="book" type="com.example.bx_web.pojo.Book">
+        <id column="book_id" property="book_id" />
+        <id column="store_id" property="store_id" />
+        <result column="book_category_id" property="book_category_id"/>
+        <result column="name" property="name"/>
+        <result column="outline" property="outline"/>
+        <result column="detail" property="detail"/>
+        <result column="press" property="press"/>
+        <result column="publish_date" property="publish_date"/>
+        <result column="size" property="size"/>
+        <result column="version" property="version"/>
+        <result column="author" property="author"/>
+        <result column="translator" property="translator"/>
+        <result column="isbn" property="isbn"/>
+        <result column="price" property="price"/>
+        <result column="pages" property="pages"/>
+        <result column="catalog" property="catalog"/>
+        <result column="market_price" property="market_price"/>
+        <result column="member_price" property="member_price"/>
+        <result column="deal_mount" property="deal_mount"/>
+        <result column="look_mount" property="look_mount"/>
+        <result column="discount" property="discount"/>
+        <result column="image_url" property="image_url"/>
+        <result column="store_mount" property="store_mount"/>
+        <result column="store_time" property="store_time"/>
+        <result column="pack_style" property="pack_style"/>
+        <result column="is_shelf" property="is_shelf"/>
+        <result column="cname" property="cname"/>
+        <result column="description" property="description"/>
+        <result column="cata" property="cata"/>
+        <result column="content" property="content"/>
+    </resultMap>
+
+
+    <select id="booklist" resultType="com.example.bx_web.pojo.Book">
+        select * from book_info ORDER BY RAND() limit #{num}
+    </select>
+
+    <select id="bookrandom" resultType="com.example.bx_web.pojo.Book">
+        select *from book_info where book_id in (select t.book_id from (select book_id from recommend where user_id=#{user_id} ORDER BY RAND() limit 5)as t)
+    </select>
+
+    <select id="bookinfo" parameterType="BigInteger" resultType="com.example.bx_web.pojo.Book">
+        select * from book_info where book_id=#{book_id}
+    </select>
+    <!-- 图书插入操作 -->
+    <insert id="add" parameterType="com.example.bx_web.pojo.Book">
+        insert into book_info(book_id,book_category_id,store_id,name,outline,detail,press,publish_date,size,version,author,translator,isbn
+        ,price,pages,catalog,market_price,member_price,deal_mount,look_mount,discount,image_url,store_mount,store_time,pack_style,is_shelf,cname,description,cata,content)
+        values(#{book_id},#{book_category_id},(select store_id from store where store_manager_id=#{store_id}),#{name},#{outline},#{detail},#{press},#{publish_date},#{size},#{version},
+            #{author},#{translator},#{isbn},#{price},#{pages},#{catalog},#{market_price},#{member_price},#{deal_mount},#{look_mount},#{discount},
+               #{image_url},#{store_mount},#{store_time},#{pack_style},#{is_shelf},#{cname},#{description},#{cata},#{content})
+    </insert>
+
+
+    <!-- 删除图书 -->
+    <delete id="delete">
+        delete from book_info where book_id = #{book_id}
+    </delete>
+
+    <!-- 修改图书信息 -->
+    <update id="edit" parameterType="com.example.bx_web.pojo.Book">
+        update book_info
+        <trim prefix="set" suffixOverrides=",">
+            <if test="book_category_id">book_category_id=#{book_category_id},</if>
+            <if test="name">name=#{name},</if>
+            <if test="outline">outline=#{outline},</if>
+            <if test="detail">detail=#{detail},</if>
+            <if test="press">press=#{press},</if>
+            <if test="publish_date">publish_date=#{publish_date},</if>
+            <if test="size">size=#{size},</if>
+            <if test="version">version=#{version},</if>
+            <if test="author">author=#{author},</if>
+            <if test="translator">translator=#{translator},</if>
+            <if test="press">press=#{press},</if>
+            <if test="isbn">isbn=#{isbn},</if>
+            <if test="price">price=#{price},</if>
+            <if test="pages">pages=#{pages},</if>
+            <if test="catalog">catalog=#{catalog},</if>
+            <if test="market_price">market_price=#{market_price},</if>
+            <if test="member_price">member_price=#{member_price},</if>
+            <if test="deal_mount">deal_mount=#{deal_mount},</if>
+            <if test="look_mount">look_mount=#{look_mount},</if>
+            <if test="discount">discount=#{discount},</if>
+            <if test="image_url">image_url=#{image_url},</if>
+            <if test="store_mount">store_mount=#{store_mount},</if>
+            <if test="store_time">store_time=#{store_time},</if>
+            <if test="pack_style">pack_style=#{pack_style},</if>
+            <if test="is_shelf">is_shelf=#{is_shelf},</if>
+            <if test="cname">cname=#{cname},</if>
+            <if test="description">description=#{description},</if>
+            <if test="cata">cata=#{cata},</if>
+            <if test="content">content=#{content},</if>
+        </trim>
+        WHERE book_id = #{book_id}
+    </update>
+
+    <!--列出所有图书-->
+    <select id="getAllBook" parameterType="int" resultMap="book">
+        SELECT *
+        FROM book_info
+        WHERE store_id = (select store_id from store where store_manager_id=#{store_manager_id})
+    </select>
+
+</mapper>

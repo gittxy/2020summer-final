@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script  type="text/javascript" defer=true language=Javascript src="./js/ManageUser.js"></script>
+    <title>用户管理</title>
+    <style>
+        .header{
+            width: 700px;
+            height: 65px;
+            background-color:rgb(83, 189, 166);
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+            line-height: 65px;
+            margin: 10px auto;
+        }
+        .btn1{
+            width: 80px;
+            height: 40px;
+            border: 2px solid rgb(83, 189, 166);
+            background-color: white;
+            color: rgb(83, 189, 166);
+            border-radius: 4px;
+            font-weight: 600;
+            float: left;
+            margin-right: 20px;
+        }
+        .btn1:hover{
+            background-color: rgb(83, 189, 166);
+            color: white;
+        }
+
+        .edit{
+            width: 80px;
+            height: 40px;
+            border: 2px solid rgb(83, 189, 166);
+            background-color: white;
+            color: rgb(83, 189, 166);
+            border-radius: 4px;
+            font-weight: 600;
+            float: right;
+            margin-right: 20px;
+        }
+        .edit:hover{
+            background-color: rgb(83, 189, 166);
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">用户管理</div>
+<div style="width:45%; border: 1px solid rgb(83, 189, 166);  border-radius: 18px;margin-left: 415px;">
+    <div  id="dataTable" style="padding-top:12px; text-align:left"></div>
+    <button class="btn1" id="delete">删除</button>
+    <button class="btn1" id="add">添加</button>
+</div> 
+    
+</body>
+</html>

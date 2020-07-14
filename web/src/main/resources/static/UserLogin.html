@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/UserLogin.css">
+    <script type="text/javascript" defer=true language=Javascript src="../js/UserLogin.js"></script>
+    <script type="text/javascript">
+
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+<div  class="container">
+    <div class="log-possion">
+        <h1 class="log-font">登录</h1>
+        用户名:<input type="text" id="login_name"  class="con-input" v-model="loginInfoVo.username" placeholder="请输入用户ID" />
+        <br/>
+        密码：<input type="password"  id="login_password" class="con-input" v-model="loginInfoVo.password" placeholder="请输入密码" />
+        <br/>
+        <form  class="choice-box">
+            <label>角色选择： </label>
+            <label><input id="role_1" name="role" type="radio" value="2"/>用户 </label>
+            <label><input id="role_2" name="role" type="radio" value="3"/>商家 </label>
+            <label><input id="role_3" name="role" type="radio" value="1"/>管理员 </label>
+        </form >
+        <button class="login_btn" id="login">登录</button>
+        <button class="register_btn" onclick="register()">注册</button>
+
+        <br/>
+    </div>
+</div>
+
+</body>
+</html>

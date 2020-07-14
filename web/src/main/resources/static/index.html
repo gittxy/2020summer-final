@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/UserIndex.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script  type="text/javascript" defer=true language=Javascript src="../js/UserIndex.js"></script>
+</head>
+<body>
+
+<!--头部div-->
+<div class="header">
+    <!--导航条-->
+    <ul class="nav">
+        <lh>
+            <a href="UserCenter.html">个人中心</a>
+            <p>Usercenter</p>
+        </lh>
+        <lh>
+            <a href="UserMyCart.html">购物车</a>
+            <p>UserCart</p>
+        </lh>
+        <lh>
+            <a href="UserLogin.html">登录/注册</a>
+            <p>Login/Reg</p>
+        </lh>
+
+    </ul>
+
+    <!--搜索框-->
+    <div class="container">
+        <form action="" class="parent">
+            <input type="text" value="输入关键词">
+            <input type="button" value="搜索">
+        </form>
+    </div>
+
+    <!--头部logo-->
+    <div class="logo">
+        <img src="../img/logo.png" alt="网站logo">
+    </div>
+
+</div>
+
+
+<!--广告栏-->
+<div class="banner">
+    <img src="../img/banner1.png" alt="">
+    <!--创建div放导航按钮-->
+    <div class="pointer">
+        <a class="active" href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+    </div>
+
+</div>
+
+<!--主体内容-->
+<div class="content clearfix">
+    <!--左侧-->
+    <div class="top20">
+        <h1>为你推荐</h1>
+
+        <!--top20推荐-->
+        <div class="t">
+            <div id="userrecommend">
+
+            </div>
+            <li>
+                <a id="0" onclick="open(this)">第一本书</a>
+            </li>
+            <li>
+                <a href="#" id="1" onclick="open(1)">777</a>
+            </li>
+            <li>
+                <a href="#" id="2" onclick="open(2)">kasj</a>
+            </li>
+            <li>
+                <a href="#" id="3" onclick="open(3)"></a>
+            </li>
+            <li>
+                <a href="#" id="4" onclick="open(4)"></a>
+            </li>
+
+
+        </div>
+    </div>
+    <!--中间-->
+    <div class="tuijian">
+        <h1>热销榜</h1>
+        <div class="n1">
+            <lh><a href=""><img src="../img/b1.png" alt=""></a></lh>
+        </div>
+        <div class="n2">
+            <lh><a href=""><img src="../img/b2.png" alt=""></a></lh>
+        </div>
+        <div class="n3">
+            <lh><a href=""><img src="../img/b3.png" alt=""></a></lh>
+        </div>
+        <div class="n3">
+            <lh><a href=""><img src="../img/b4.png" alt=""></a></lh>
+        </div>
+    </div>
+</div>
+<!--底部信息-->
+<div class="footer">
+    <div class="w">
+        <p>正品保证 | 超快送达 | 品类齐全 | 欢乐购物</p>
+        <p>总部地址：北京市海淀区上园村3号</p>
+        <p class="copy">Copyright © 2018 - 2020 逍遥书屋. All Rights Reserved京ICP证041189号|出版物经营许可证 新出发京批字第直0673号</p>
+    </div>
+
+</div>
+</body>
+</html>

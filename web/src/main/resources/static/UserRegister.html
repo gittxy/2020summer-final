@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/UserLogin.css">
+  <script type="text/javascript" defer=true language=Javascript src="../js/UserRegister.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="log-possion">
+      <h1 class="log-font">注册</h1>
+        用户名:<input type="text" id=username  class="con-input"  placeholder="请输入用户名" />
+        <br/>
+        密码：<input type="password" id=password class="con-input"  placeholder="请输入密码" />
+        <br/>
+        确认密码：<input type="password" id=re_pass class="con-input"  placeholder="请再次输入密码" />
+      <br/>
+        <form  class="choice-box">
+          <label>角色选择： </label>
+          <label><input name="role" type="radio" value="2" />用户 </label>
+          <label><input name="role" type="radio" value="3" />商家 </label>
+        </form >
+        <button class="login_btn" id="register">注册</button>
+    </div>
+  </div>
+  
+</body>
+</html>

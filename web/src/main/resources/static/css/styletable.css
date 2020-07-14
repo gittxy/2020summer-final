@@ -1,0 +1,323 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*公共部分*/
+
+* {
+    font-family: "microsoft yahei", "helvetica", "heiti SC", "droid", "sans";
+    word-spacing: 0px;
+    letter-spacing: .02rem;
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*position: relative;*/
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clear {
+    clear: both
+}
+
+.blank {
+    margin-bottom: 4rem;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset */
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+.bgcolor-1 { background: #f0efee; }
+.bgcolor-2 { background: #f9f9f9; }
+.bgcolor-3 { background: #e8e8e8; }/*light grey*/
+.bgcolor-4 { background: #2f3238; color: #fff; }/*Dark grey*/
+.bgcolor-5 { background: #df6659; color: #521e18; }/*pink1*/
+.bgcolor-6 { background: #2fa8ec; }/*sky blue*/
+.bgcolor-7 { background: #d0d6d6; }/*White tea*/
+.bgcolor-8 { background: #3d4444; color: #fff; }/*Dark grey2*/
+.bgcolor-9 { background: #ef3f52; color: #fff;}/*pink2*/
+.bgcolor-10{ background: #64448f; color: #fff;}/*Violet*/
+.bgcolor-11{ background: #3755ad; color: #fff;}/*dark blue*/
+.bgcolor-12{ background: #3498DB; color: #fff;}/*light blue*/
+.bgcolor-20{ background: #494A5F;color: #D5D6E2;}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+audio, canvas, video {
+    display: inline-block;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden] {
+    display: none;
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:active, a:hover {
+    outline: 0;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+dfn {
+    font-style: italic;
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+code, kbd, pre, samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+small {
+    font-size: 80%;
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+img {
+    border: 0;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+figure {
+    margin: 0;
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+
+button, input {
+    line-height: normal;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.button {
+    float: left;
+    height: 100%;
+    display: inline-block;
+    outline: 0 none;
+    margin: 0;
+    cursor: pointer;
+    border: 0;
+    width: 8rem;
+    font-size: 2rem;
+}
+
+
+input[type=button]::-moz-focus-inner {
+    padding: 0;
+    border: 0 none;
+    -moz-box-sizing: content-box;
+}
+
+input[type=button]::-webkit-focus-inner {
+    padding: 0;
+    border: 0 none;
+    -webkit-box-sizing: content-box;
+}
+
+input[type=text]::-moz-focus-inner {
+    padding: 0;
+    border: 0 none;
+    -moz-box-sizing: content-box;
+}
+
+input[type=text]::-webkit-focus-inner {
+    padding: 0;
+    border: 0 none;
+    -webkit-box-sizing: content-box;
+}
+
+/* 公用头部 */
+header { background: #3366CC; width: 100%; height: 5rem; position: fixed; top: 0; left: 0;}
+/* header img {width: 3rem;height: 3rem;margin-top: 1rem;float: left;z-index: 999999999;}
+header span {line-height: 5rem;font-size: 2rem;color: #fff;display: flex;justify-content: center; margin-right: 2rem;}
+header .head_fot{display: flex; -webkit-flex-flow: row wrap; justify-content: center;height: 2rem;line-height: 2rem;
+    background: #666;color: #fff;} */
+
+#menu{
+  display: flex;
+  justify-content: center;         
+}
+#menu li{
+  height: 5rem; 
+  line-height: 5rem; 
+  text-align: center;
+  font-size: 2rem;color: #fff;
+}
+#menu li img{display: block; margin:0.5rem 0 0 1rem;}
+
+/* 申请人信息内容 */
+.info{ margin-top: 8rem;border-top: solid 1px #ddd;}
+.info ul li{list-style-type: none;padding: 1.5rem 0 ;border-bottom: solid 1px #eee;width: 98%;margin: auto}
+.info ul li .left{width: 25%;float: left;position: relative; padding-left:4px;font-size: 1.5rem;}
+.info ul li .right{width: 72%;float: right;position: relative;text-align: left;font-size: 1.5rem;    text-align: right;}
+.info ul li .right input{outline: none;border:0;width: 100%;text-align: right;}
+
+.btn-1{margin-top: 3rem;margin-bottom: 2rem;text-align: center}
+.btn-1 button{width: 90%;outline: none;border: none;background: #3366CC;color: #fff;height: 4rem;display: inline-block;font-size: 1.5rem}
+
+.btn-4{border: 0;width: 90%;height: 5rem;color: #fff; font-size: 2rem; background: #18b4ed; left: 5%; position: fixed; outline: none;
+    cursor: default;border-radius: 0.5rem;bottom: 5rem;}
+.btn-5{border: 0;width: 90%;height: 5rem;color: #fff;font-size: 2rem;background: #18b4ed;left: 5%;position: fixed;outline: none;
+    cursor: default;border-radius: 0.5rem;bottom: 3rem;}

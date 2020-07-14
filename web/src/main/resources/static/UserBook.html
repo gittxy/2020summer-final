@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" defer=true language=Javascript src="../js/Userbook.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<title>书本详情</title>
+	<style type="text/css">
+	/*设置头部div*/
+	.header{
+            /*设置宽度*/
+            width: 1000px;
+           
+           
+            /*居中*/
+            margin: 10px auto;
+            padding-top: 20px;
+
+        }
+        /*logo位置*/
+        .logo{
+            margin-left: 15px;
+        }
+        /*设置导航条*/
+        .nav{
+            float:right;
+        }
+        .nav lh{
+            float: left;
+            /*设置内边距*/
+            padding: 0 10px;
+            margin-top: 10px;
+        }
+        /*导航条*/
+        .nav a{
+            color:black;
+            /*去下划线*/
+            text-decoration: none;
+            
+        }
+        /*设置超链接移入效果*/
+        .nav a:hover{
+            color:darkgray;
+            text-decoration: underline;
+        }
+        /*设置搜索框*/
+        .container {
+                width: 350px;
+                height: 50px;
+                margin-top: 10px;
+                margin-right: 25px;
+                float:right
+            }
+            
+            .parent {
+                width: 100%;
+                height: 42px;
+                top: 4px;
+                position: relative;
+            }
+            
+            .parent>input:first-of-type {
+                /*输入框高度设置为40px, border占据2px，总高度为42px*/
+                width: 250px;
+                height: 42px; 
+                border: 1px solid #ccc;
+                font-size: 14px;
+                outline: none;
+                color: #bfbfbf;
+                padding-left: 15px;
+            }
+            
+            .parent>input:first-of-type:focus {
+                border: 1px solid #317ef3;
+                padding-left: 10px;
+            }
+            
+            .parent>input:last-of-type {
+                /*button按钮border并不占据外围大小，设置高度42px*/
+                width: 80px;
+                height: 44px; 
+                position: absolute;
+                background: #317ef3;
+                border: 1px solid #317ef3;
+                color: #fff;
+                font-size: 16px;
+                outline: none;
+            }
+
+	
+
+.banner{
+	width: 998px;
+	margin: 0px auto;
+}
+.contentall{
+	/*设置宽度*/
+	width: 1000px;
+    height: 300px;       
+           
+	/*居中*/
+	margin: 0px auto;
+}
+
+
+.book_left{
+    width: 350px;
+    height: 400px;
+    float: left;
+    margin: 0 auto;
+    position:fixed;
+
+}
+.book_right{
+    border: 2px solid #46B3E6;
+    width: 640px;
+    height: 400px;
+    margin: 0 auto;
+	margin-left: 10px;
+	float: right;
+
+}
+.disc{
+	font-style:initial;
+	margin-left: 30px;
+}
+.btn{
+	margin-left: 50px;
+}
+.add{
+	/*转换为块*/
+	display: block;
+	width: 169px;
+	height: 47px;
+	background-image:url(../img/addcart.png);
+	float: left;
+}
+.collet{
+	display: block;
+	width: 100px;
+	height: 55px;
+	background-image: url(../img/collet.png);
+	float: left;
+}
+.content{
+    height: 50px;
+}
+.content_1{
+    height: 100px;
+}
+	</style>
+</head>
+<body>
+	<!--头部div-->
+	<div class="header">
+            
+
+		<!--导航条-->
+		<ul class="nav">
+			<lh>
+				<a href="UserCenter.html">个人中心</a>
+				<p>Usercenter</p>
+			</lh>
+			<lh>
+				<a href="UserCart.html">购物车</a>
+				<p>UserCart</p>
+			</lh>
+			<lh>
+				<a href="UserLogin.html">登录/注册</a>
+				<p>Login/Reg</p>
+			</lh>
+			
+			
+		</ul>
+
+		<!--搜索框-->
+		<div class="container">
+			<form action="" class="parent">
+				<input type="text" value="输入关键词">
+				<input type="button" value="搜索">
+			</form>
+		</div>
+
+		<!--头部logo-->
+		<div class="logo">
+			<img src="../img/logo.png" alt="网站logo">
+		</div>
+
+	</div>
+	<div class="banner">
+		<img src="../img/detail.jpg" alt="">
+
+	</div>
+
+	<!--内容部分-->
+    <div class="contentall">
+		<div class="book_left">  
+			<img id="book_img" src="?" alt=""  >
+		</div>
+		<div class="book_right">
+			<div class="disc">
+				<dl>
+					<dt class="content">
+						书籍名称：  <lh id="book_name"></lh>
+					</dt>
+					<dt  class="content">
+						作者：  <lh id="book_author"></lh>
+					</dt>
+					<dt  class="content">
+						价格:  <lh id="book_price"></lh>
+					</dt>
+					<dt  class="content_1">
+						书籍简介:  <lh id="book_com"></lh>
+					</dt>
+					<dt  class="content">
+						数量:  <lh id="book_num"></lh>
+					</dt>
+	
+				</dl> 
+			</div>
+			<div class="btn">
+				<a id="mycart" class="add" href="UserMyCart.html"></a>
+				<a id="collet" class="collet" href="UserCollect.html"></a>
+			</div>
+			
+		
+		</div>
+	</div>
+</body>
+</html>

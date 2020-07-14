@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.bx_web.mapper.CartMapper">
+
+
+    <insert id="add">
+        INSERT INTO cart(user_id,book_id,store_id,name,image_url,price,num,money) values(#{user_id},
+        #{book_id},
+        #{store_id},
+        #{name},
+        null,
+        #{price},
+        #{num},
+        #{money})
+    </insert>
+
+    <delete id="delete">
+        delete from cart where cart_id=#{cart_id}
+    </delete>
+
+
+    <update id="edit">
+        update  cart
+        <trim prefix="set" suffixOverrides=",">
+            <if test="num">num=#{num},</if>
+            <if test="money">money=#{money},</if>
+        </trim>
+        WHERE cart_id=#{cart_id}
+    </update>
+
+    <select id="findList" parameterType="int" resultType="com.example.bx_web.pojo.Cart">
+        select * from cart where user_id=#{user_id}
+    </select>
+
+    <select id="getTotal" parameterType="int" resultType="BigDecimal">
+        select money from cart where cart_id=#{cart_id}
+    </select>
+
+</mapper>
